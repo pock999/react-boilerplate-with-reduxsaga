@@ -1,0 +1,7 @@
+body > div.swal2-container.swal2-center.swal2-backdrop-show > div > div.swal2-header > div.swal2-icon.swal2-question.swal2-icon-show {
+  border-color: #f27474 !important;
+}
+
+body > div.swal2-container.swal2-center.swal2-backdrop-show > div > div.swal2-header > div.swal2-icon.swal2-question.swal2-icon-show > div {
+    color: #f27474 !important;
+}
