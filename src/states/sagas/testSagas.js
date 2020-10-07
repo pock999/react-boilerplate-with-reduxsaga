@@ -1,14 +1,15 @@
 import { call, put, cancelled, takeEvery, takeLatest } from 'redux-saga/effects';
+import { TestAction } from '../reducerActions';
+
+const { testSagaAction } = window;
 
 export const testSagas= [
-  takeEvery("HANDLE_TEST_LOGIN_ACTION", HandleLoginAction),
+  takeEvery(testSagaAction.HANDLE_TEST_ACTION, HandleLoginAction),
 ];
 
 function* HandleLoginAction(action) {
   const { payload } = action;
   console.log(payload);
-  yield put({
-    type: 'HANDLE_TEST',
-    payload,
-  });
+  console.log('saga dispatch');
+  yield put(TestAction.HandleTest(payload));
 }

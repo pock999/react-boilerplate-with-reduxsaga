@@ -3,8 +3,13 @@ import { useSelector, useDispatch  } from 'react-redux';
 import { Link, useHistory } from "react-router-dom";
 import logo from './logo.svg';
 import './App.css';
-
 import _ from 'lodash';
+
+import * as testSagaAction from './states/sagaActions/testAction';
+import * as utilSagaAction from './states/sagaActions/utilAction';
+
+global.testSagaAction = testSagaAction;
+global.utilSagaAction = utilSagaAction;
 
 function App() {
 
@@ -28,13 +33,12 @@ function App() {
       
     }
 
-    dispatch({
-      type: 'HANDLE_TEST_LOGIN_ACTION',
-      payload: {
-        email,
-        password
-      }
-    });
+    console.log('view dispatch');
+
+    dispatch(global.testSagaAction.HandleTestDispatcher({
+      email,
+      password
+    }));
 
   };
 

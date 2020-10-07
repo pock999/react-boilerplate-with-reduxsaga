@@ -3,5 +3,5 @@ import Test from './Test';
 
 export {
   AlertState,
-  Test
+  Test,
 };

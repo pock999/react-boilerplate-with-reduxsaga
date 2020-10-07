@@ -4,6 +4,7 @@ const Test = (state = initState, action) => {
   const payload = action.payload;
   switch(action.type) {
     case "HANDLE_TEST":
+      console.log('--- reducer ---');
       console.log('HANDLE_TEST');
       console.log(payload);
       return payload;
